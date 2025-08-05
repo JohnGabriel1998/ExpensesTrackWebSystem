@@ -13,6 +13,9 @@ const dashboardRoutes = require('./routes/dashboard');
 
 const app = express();
 
+// Trust proxy (for Railway deployment)
+app.set('trust proxy', 1);
+
 // Middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*',
@@ -22,6 +25,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Expense Tracker API is running!',
+    status: 'OK',
+    endpoints: {
+      health: '/health',
+      auth: '/api/auth',
+      expenses: '/api/expenses',
+      dashboard: '/api/dashboard'
+    }
+  });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/dashboard', dashboardRoutes);
