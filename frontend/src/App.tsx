@@ -23,7 +23,7 @@ function App() {
         <CustomThemeProvider>
           <CssBaseline />
           <Routes>
-            <Route path="/ExpenseTracker" element={<Navigate to="/login" replace />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<PrivateRoute />}>
