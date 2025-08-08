@@ -808,7 +808,7 @@ const EditExpense: React.FC = () => {
                           }
                         }}
                       >
-                        {isSubmitting ? t('expenses.actions.updating') : t('expenses.actions.updateExpense')}
+                        {isSubmitting ? t('expenses.buttons.updating') : t('expenses.buttons.updateExpense')}
                       </Button>
                     </Box>
                   </Grid>

@@ -41,6 +41,68 @@ export interface DashboardSummary {
   year: number;
 }
 
+export interface Salary {
+  _id: string;
+  basicSalary: number;
+  allowances: {
+    housing: number;
+    transport: number;
+    food: number;
+    other: number;
+  };
+  deductions: {
+    tax: number;
+    insurance: number;
+    pension: number;
+    other: number;
+  };
+  month: number;
+  year: number;
+  payDate: string;
+  grossSalary: number;
+  netSalary: number;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface SalaryAnalytics {
+  salary: {
+    gross: number;
+    net: number;
+    basicSalary: number;
+    allowances: {
+      housing: number;
+      transport: number;
+      food: number;
+      other: number;
+    };
+    deductions: {
+      tax: number;
+      insurance: number;
+      pension: number;
+      other: number;
+    };
+  };
+  expenses: {
+    total: number;
+    byCategory: Record<string, number>;
+    count: number;
+  };
+  savings: {
+    amount: number;
+    percentage: number;
+  };
+  suggestions: SavingSuggestion[];
+}
+
+export interface SavingSuggestion {
+  type: 'critical' | 'improvement' | 'success' | 'category';
+  priority: 'high' | 'medium' | 'low';
+  message: string;
+  recommendation: string;
+}
+
 export interface AuthContextType {
   user: User | null;
   token: string | null;

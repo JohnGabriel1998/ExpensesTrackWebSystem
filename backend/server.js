@@ -10,6 +10,7 @@ dotenv.config();
 const authRoutes = require('./routes/auth');
 const expenseRoutes = require('./routes/expenses');
 const dashboardRoutes = require('./routes/dashboard');
+const salaryRoutes = require('./routes/salary');
 
 const app = express();
 
@@ -33,7 +34,8 @@ app.get('/', (req, res) => {
       health: '/health',
       auth: '/api/auth',
       expenses: '/api/expenses',
-      dashboard: '/api/dashboard'
+      dashboard: '/api/dashboard',
+      salary: '/api/salary'
     }
   });
 });
@@ -41,6 +43,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/salary', salaryRoutes);
 
 // Health check route
 app.get('/health', (req, res) => {

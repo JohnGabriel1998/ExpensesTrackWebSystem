@@ -32,6 +32,7 @@ import {
   Brightness4,
   Brightness7,
   TrendingUp,
+  MonetizationOn as SalaryIcon,
 } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme as useCustomTheme } from '../contexts/ThemeContext';
@@ -65,6 +66,7 @@ const Layout: React.FC = () => {
   const menuItems = [
     { text: t('navigation.dashboard'), icon: <DashboardIcon />, path: '/dashboard', color: '#6366f1' },
     { text: t('navigation.expenses'), icon: <ReceiptIcon />, path: '/expenses', color: '#059669' },
+    { text: t('navigation.salary'), icon: <SalaryIcon />, path: '/salary', color: '#8b5cf6' },
     { text: t('navigation.settings'), icon: <SettingsIcon />, path: '/settings', color: '#dc2626' },
   ];
 

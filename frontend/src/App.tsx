@@ -14,6 +14,9 @@ import Expenses from './pages/Expenses';
 import AddExpense from './pages/AddExpense';
 import EditExpense from './pages/EditExpense';
 import Settings from './pages/Settings';
+import SalaryList from './pages/SalaryList';
+import SalarySlip from './pages/SalarySlip';
+import SalaryAnalytics from './pages/SalaryAnalytics';
 import './i18n'; // Initialize i18n
 
 function App() {
@@ -33,6 +36,10 @@ function App() {
                 <Route path="expenses" element={<Expenses />} />
                 <Route path="expenses/add" element={<AddExpense />} />
                 <Route path="expenses/edit/:id" element={<EditExpense />} />
+                <Route path="salary" element={<SalaryList />} />
+                <Route path="salary/add" element={<SalarySlip />} />
+                <Route path="salary/edit/:id" element={<SalarySlip />} />
+                <Route path="salary-analytics" element={<SalaryAnalytics />} />
                 <Route path="settings" element={<Settings />} />
               </Route>
             </Route>

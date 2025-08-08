@@ -541,7 +541,7 @@ const AddExpense: React.FC = () => {
                           }
                         }}
                       >
-                        {isSubmitting ? t('expenses.actions.adding') : t('expenses.actions.addExpense')}
+                        {isSubmitting ? t('expenses.buttons.adding') : t('expenses.buttons.addExpense')}
                       </Button>
                     </Box>
                   </Grid>
